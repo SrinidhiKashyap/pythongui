@@ -196,8 +196,8 @@ class hospital:
         self.hospital_table.heading("bloodpressure",text="Blood Pressure")
         self.hospital_table.heading("storage",text="Storage")
         self.hospital_table.heading("pid",text="ID")
-        self.hospital_table.heading("Pname",text="Patient Name")
         self.hospital_table.heading("DoB",text="Date of Birth")
+        self.hospital_table.heading("Pname",text="Patient Name")
         self.hospital_table.heading("paddrs",text="Address")
         self.hospital_table.heading("suggestion",text="Suggestion")
  
@@ -215,8 +215,8 @@ class hospital:
         self.hospital_table.column("bloodpressure",width=100)
         self.hospital_table.column("storage",width=100)
         self.hospital_table.column("pid",width=100)
-        self.hospital_table.column("Pname",width=100)
         self.hospital_table.column("DoB",width=100)
+        self.hospital_table.column("Pname",width=100)
         self.hospital_table.column("paddrs",width=100)
         self.hospital_table.column("suggestion",width=100)
 
@@ -271,15 +271,15 @@ class hospital:
         self.bloodpressure.set(rows[8])
         self.storage.set(rows[9])
         self.pid.set(rows[10])
-        self.Pname.set(rows[11])
-        self.DoB.set(rows[12])
+        self.DoB.set(rows[11])
+        self.Pname.set(rows[12])
         self.paddrs.set(rows[13])
         self.suggestion.set(rows[14])
 
     def iupdate(self):
         conn=mysql.connector.connect(host='localhost',user='root',password='',database='mydata')
         my_cursor=conn.cursor()  
-        my_cursor.execute("update hospital set name=%s, dose=%s, tablets=%s, lot=%s,issue=%s, expiry=%s, side_effect=%s, bp=%s, storage=%s, pid=%s, dob=%s, pname=%s, address=%s, suggestion=%s where ref=%s",(
+        my_cursor.execute("update hospital set name=%s, dose=%s, tablets=%s, lot=%s,issue=%s, expiry=%s, side_effect=%s, bp=%s, storage=%s, pid=%s, pname=%s, dob=%s, address=%s, suggestion=%s where ref=%s",(
             self.Name.get(),self.Dose.get(),self.tablets.get(),
             self.lot.get(),self.issue.get(),self.expiry.get(),self.sideeffect.get(),
             self.bloodpressure.get(),self.storage.get(),self.pid.get(),
