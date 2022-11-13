@@ -6,9 +6,9 @@ import time
 import datetime
 from tkinter import messagebox
 from tkinter.font import BOLD
+from mysql.connector import *
 import mysql.connector
-from mysql.connector.catch23 import make_abc
-from mysql.connector.fabric import connect
+
 
 
 class hospital:
